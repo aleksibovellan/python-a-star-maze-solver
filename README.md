@@ -13,7 +13,7 @@
 
 # DESCRIPTION
 
-A Python script with an AI algorithm that solves a 2D maze using the A* search algorithm - but, with specific movement constraints, to force the AI really earn its way out of the maze. This time, after first entering the maze from the bottom right corner, the AI can only move forward, or turn right and then move forward. It cannot turn left or move backward. The optimal route to the exit point at the bottom left would be very short with free movement, but this tweak eventually creates probably the longest possible route, by having to loop around the maze several times due to turning restrictions by design.
+A Python script with an AI algorithm that solves a 2D maze using the A* search algorithm - but, with specific movement constraints, to really force the AI earn its way out of the maze. This time, after first entering the maze from the bottom right corner, the AI can only move forward, or turn right and then move forward. It cannot turn left or move backward. The optimal route to the exit point at the bottom left would be very short with free movement, but this tweak eventually creates probably the longest possible route, by having to loop around the maze several times due to turning restrictions by design.
 
 **The idea was to show its problem-solving ability to navigate complex environments even with limited movement options.**
 
