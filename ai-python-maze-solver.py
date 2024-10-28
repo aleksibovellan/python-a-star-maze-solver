@@ -1,21 +1,27 @@
-import matplotlib.pyplot as plt
-import time
+# Python Maze Solver using A* Algorithm with Movement Constraints
+# Author: Aleksi Bovellan (2024)
 
-# -*- coding: utf-8 -*-
+
 """
-Maze Solver using A* Algorithm with Movement Constraints
-
 Movement Constraints:
-- At each step, the agent can:
+
+- At each step, the AI can only:
   - Move forward.
   - Turn right and then move forward.
-- The agent cannot:
+  
+- The AI can't:
   - Turn left.
   - Move backward.
   - Turn in place without moving.
 
-This script solves the maze, prints the movements, and visualizes the path.
+While the script solves the maze it print-outs its movements, and finally also visualizes the found path.
 """
+
+
+# Import necessary libraries
+import matplotlib.pyplot as plt
+import time
+
 
 class Node:
     """A node class for A* Pathfinding with orientation."""
