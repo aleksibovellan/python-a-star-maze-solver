@@ -2,7 +2,7 @@
 
 **Author:** Aleksi Bovellan (2024)
 
-**Technologies:** Python 3, Matplotlib for visualization
+**Technologies:** Python 3, numpy, Matplotlib for visualization
 
 
 ---
@@ -30,7 +30,7 @@ This solver print-outs its steps into the console during runtime, and in the end
 
 # PRE-INSTALLATION:
 
-pip install matplotlib
+pip install matplotlib numpy
 
 ---
 
