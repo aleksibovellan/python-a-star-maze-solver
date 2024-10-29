@@ -7,7 +7,7 @@
 
 ---
 
-![screenshot](https://github.com/user-attachments/assets/d08b4009-b823-4bd0-9d97-5255717c869a)
+![screenshot](https://github.com/user-attachments/assets/14206b40-991f-4e43-ae9e-ea3ea9c09111)
 
 ---
 
