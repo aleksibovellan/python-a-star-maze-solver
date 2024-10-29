@@ -1,7 +1,6 @@
 # Python Maze Solver using A* Algorithm with Movement Constraints
 # Author: Aleksi Bovellan (2024)
 
-
 """
 Movement Constraints:
 
@@ -17,11 +16,11 @@ Movement Constraints:
 While the script solves the maze it print-outs its movements, and finally also visualizes the found path.
 """
 
-
 # Import necessary libraries
 import matplotlib.pyplot as plt
 import time
-
+from matplotlib.collections import LineCollection
+import numpy as np
 
 class Node:
     """A node class for A* Pathfinding with orientation."""
@@ -147,14 +146,27 @@ def astar(maze, start, end):
         print("")  # Empty line for better readability
 
 def visualize_maze(maze, path, start, end):
-    """Visualizes the maze and the path taken by the agent."""
+    """Visualizes the maze and the path taken by the agent with a gradient color."""
     plt.imshow(maze, cmap='binary')  # By default, origin='upper'
     y_path, x_path = zip(*[step[0] for step in path])
-    plt.plot(x_path, y_path, marker='o', color='red')
+
+    # Create a list of points
+    points = np.array([x_path, y_path]).T.reshape(-1, 1, 2)
+    segments = np.concatenate([points[:-1], points[1:]], axis=1)
+
+    # Create a LineCollection from the segments
+    lc = LineCollection(segments, cmap='magma', linewidth=3)
+    lc.set_array(np.linspace(0, 1, len(segments)))
+
+    # Add the LineCollection to the plot
+    plt.gca().add_collection(lc)
+
+    # Plot the start and end points
     plt.scatter([start[1]], [start[0]], color='green', s=100, label='Start')
     plt.scatter([end[1]], [end[0]], color='blue', s=100, label='End')
-    plt.title('Maze Solution Path')
+    plt.title('Maze Solution Path with Gradient')
     plt.legend()
+    plt.colorbar(lc, label='Path Progression')
     plt.show()
 
 def main():
